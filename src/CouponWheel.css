@@ -5,7 +5,7 @@
 body{
     margin:0;
     padding:0;
-    background: linear-gradient(to right, black, rgb(48, 48, 48));
+    background: linear-gradient(to left, rgb(244, 244, 244), rgb(48, 48, 48));
     display:flex;
     align-items:center;
     justify-content: center;
@@ -14,6 +14,7 @@ body{
 }
 
 .container{
+    box-shadow: 0 5px 12px;
     border-radius:50%;
     border:15px solid rgb(255, 255, 255);
     width:500px;
@@ -45,31 +46,31 @@ body{
     left:50%;
 }
 .container .two{
-    background-color: #ff9800;
+    background-color: indigo;
     transform: rotate(45deg);
 }
 .container .three{
-    background-color: #e91e63;
+    background-color: rgb(14, 235, 209);
     transform:rotate(90deg);
 }
 .container .four{
-    background-color: #4caf50;
+    background-color: rgb(25, 131, 25);
     transform: rotate(135deg);
 }
 .container .five{
-    background-color: #009688;
+    background-color: rgb(200, 19, 19);
     transform: rotate(180deg);
 }
 .container .six{
-    background-color: #795548;
+    background-color: rgb(243, 243, 0);
     transform: rotate(225deg);
 }
 .container .seven{
-    background-color: #9c27b0;
+    background-color: #7f0095;
     transform: rotate(270deg);
 }
 .container .eight{
-    background-color: #f44336;
+    background-color: #f3088d;
     transform: rotate(315deg);
 }
 
@@ -82,9 +83,26 @@ body{
 }
 
 .arrow::before{
-    content:"\21D5";
+    content:"\21D3";
     font-size:59px;
 }
+
+.wheel{
+    animation: spin 2s infinite linear;
+}
+
+.wheel-2{
+    animation: spin 35s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 #spin{
     position: absolute;
@@ -96,8 +114,20 @@ body{
     transform:translate(-50%,-50%);
     background-color: #dcdcdc;
     font-size:large;
-    color:#717171;
+    color:#515151;
     border-radius:50%;
     cursor: pointer;
     z-index: 11;
+}
+
+#results{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    font-size: x-large;
+    transform:translate(-50%,-50%);
+    letter-spacing: 3px;
+    font-weight: 500;
 }
